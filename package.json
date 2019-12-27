@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/skqoaudgh/Node.js-CalorieCounter-App/issues"
   },
-  "homepage": "https://github.com/skqoaudgh/Node.js-CalorieCounter-App#readme"
+  "homepage": "https://github.com/skqoaudgh/Node.js-CalorieCounter-App#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "xml2js": "^0.4.23"
+  }
 }
