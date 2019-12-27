@@ -4,7 +4,7 @@
   "description": "Calorie counter application made with node.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,8 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
