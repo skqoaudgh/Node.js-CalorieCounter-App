@@ -13,15 +13,16 @@
     <h2>Calorie Counter</h2>
 </div>
 <div id="container">
-        <form action="/search" method="POST">
-            <div class="input-group">
-                <input type="text" class="form-control" name="foodname" placeholder="Enter food name you want to search" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-                <div class="input-group-append" id="button-addon4">
-                    <button class="btn btn-outline-secondary" type="submit">Search</button>
-                    <button class="btn btn-outline-secondary" type="button" id="clear">Clear</button>
-                </div>
+    <%- include ("messages.ejs") %>
+    <form action="/search" method="POST">
+        <div class="input-group">
+            <input type="text" class="form-control" name="foodname" placeholder="Enter food name you want to search" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+            <div class="input-group-append" id="button-addon4">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+                <button class="btn btn-outline-secondary" type="button" id="clear">Clear</button>
             </div>
-        </form>
+        </div>
+    </form>
     <% if(foodInfo) { %>
         <table class="table table-striped">
             <thead>
@@ -29,6 +30,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Food Name</th>
                 <th scope="col">Calorie</th>
+                <th scope="col">Portion Size</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +39,7 @@
                     <th scope="row"><%= i+1 %></th>
                     <td><%= foodInfo[i].name %></td>
                     <td><%= foodInfo[i].calorie %></td>
+                    <td><%= foodInfo[i].portion %> <%= foodInfo[i].portionName %></td>
                     </tr>
                 <% } %>
             </tbody>
