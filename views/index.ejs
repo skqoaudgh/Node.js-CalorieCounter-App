@@ -13,36 +13,42 @@
     <h2>Calorie Counter</h2>
 </div>
 <div id="container">
-    <table class="table table-striped">
-        <thead>
-            <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-            </tr>
-        </tbody>
-    </table>
+    <% if(!foodInfo) { %>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Enter food name you want to search" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+            <div class="input-group-append" id="button-addon4">
+                <button class="btn btn-outline-secondary" type="button" id="search">Search</button>
+                <button class="btn btn-outline-secondary" type="button" id="clear">Clear</button>
+            </div>
+        </div>
+    <% } else { %>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Food Name</th>
+                <th scope="col">Calorie</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                </tr>
+                <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                </tr>
+                <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                </tr>
+            </tbody>
+        </table>
+    <% } %>
 </div>
 </body>
 </html>
