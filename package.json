@@ -1,0 +1,20 @@
+{
+  "name": "Node.js-CalorieCounter-App",
+  "version": "1.0.0",
+  "description": "Calorie counter application made with node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skqoaudgh/Node.js-CalorieCounter-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skqoaudgh/Node.js-CalorieCounter-App/issues"
+  },
+  "homepage": "https://github.com/skqoaudgh/Node.js-CalorieCounter-App#readme"
+}
