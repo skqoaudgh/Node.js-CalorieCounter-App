@@ -10,8 +10,20 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
+app.use(express.urlencoded({ extended: false }));
+
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', {foodInfo: null});
+});
+
+app.post('/search', (req, res) => {
+    const word = req.body.foodname.toLowerCase();
+    let result = foodInfo.filter(food => food.Display_Name[0].toLowerCase().includes(word));
+    let filteredResult = [];
+    result.forEach(food => {
+        filteredResult.push({name: food.Display_Name[0], calorie: food.Calories[0]});
+    });
+    res.render('index', {foodInfo: filteredResult});
 });
 
 app.listen(3000, () => {
