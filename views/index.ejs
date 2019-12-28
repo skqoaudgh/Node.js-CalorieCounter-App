@@ -36,16 +36,30 @@
                 </tr>
             </thead>
             <tbody>
+                <% const max = foodInfo.length<25?foodInfo.length:25; %>
+                <% let page = 0; %>
                 <% for(let i=0; i<foodInfo.length; i++) { %>
-                    <tr>
-                    <th scope="row"><%= i+1 %></th>
-                    <td><%= foodInfo[i].name %></td>
-                    <td><%= foodInfo[i].calorie %></td>
-                    <td><%= foodInfo[i].portion %> <%= foodInfo[i].portionName %></td>
-                    </tr>
+                    <% if(i < max) { %>
+                        <tr>
+                            <th scope="row"><%= (page*25)+(i+1) %></th>
+                            <td><%= foodInfo[(page*25)+i].name %></td>
+                            <td><%= foodInfo[(page*25)+i].calorie %></td>
+                            <td><%= foodInfo[(page*25)+i].portion %> <%= foodInfo[(page*25)+i].portionName %></td>
+                        </tr>
+                    <% } else { %>
+                        <tr class="hidden">
+                            <th scope="row"><%= (page*25)+(i+1) %></th>
+                            <td><%= foodInfo[(page*25)+i].name %></td>
+                            <td><%= foodInfo[(page*25)+i].calorie %></td>
+                            <td><%= foodInfo[(page*25)+i].portion %> <%= foodInfo[(page*25)+i].portionName %></td>
+                        </tr>                      
+                    <% } %>
                 <% } %>
             </tbody>
         </table>
+        <div style="text-align: center; margin: 2rem;">
+            <button type="button" class="btn btn-secondary" id="more">More</button>
+        </div>
     <% } %>
 </div>
 </body>

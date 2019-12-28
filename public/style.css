@@ -14,3 +14,7 @@
 form {
     margin: 5rem auto;
 }
+
+.hidden {
+    display: none;
+}
